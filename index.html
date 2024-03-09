@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Filter tasks</title>
+</head>
+<body>
+<ul id="fruits">
+</ul>
+<script>
+<!-- array of string to check certain length-->
+let words=['cat','dog','elephant','fish','giraffe'];
+let a=words.filter(word=>word.length>3);
+console.log(a);
+<!--end-->
+</script>
+<script>
+<!--array of numbers to check which number are divisible by 3-->
+let num=[3,8,15,67,30,12,90,45,43];
+let b=num.filter(number=>number%3==0);
+console.log(b);
+<!--end-->
+</script>
+<script>
+<!--array of object  to check the specific value-->
+let items=[{name:"apple",category:"fruit"},
+{name:"brinjal",category:"vegetable"},
+{name:"mango",category:"fruits"},
+{name:"carrot",category:"vegetable"},
+{name:"orange",category:"fruits"}];
+let  veggie=items.filter(c=>c.category=="vegetable");
+console.log(veggie);
+<!--end-->
+</script>
+<script>
+<!--array of strings to check those start with a specific letter-->
+let  things=["Diningtable","cricketbat","chair","car","helmet"];
+let d=things.filter(thing=>thing.startsWith("c"));
+console.log(d);
+<!--end-->
+</script>
+<script>
+<!--array of objects based on multiple conditions-->
+let item=[{name:"apple",category:"fruits",price:145},
+{name:"brinjal",category:"vegetable",price:42},
+{name:"mango",category:"fruits",price:200},
+{name:"carrot",category:"vegetable",price:70},
+{name:"orange",category:"fruits",price:167}];
+let fruits=item.filter(e=>e.category=="fruits" && e.price>100);
+console.log(fruits);
+
+let list=document.getElementById("fruits");
+for(let x in fruits){
+let a=document.createElement("li");
+a.innerText=Object.entries(fruits[x]);
+list.appendChild(a);
+}
+
+
+<!--end-->
+</script>
+</body>
+</html>
